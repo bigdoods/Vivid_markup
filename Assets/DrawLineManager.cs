@@ -5,7 +5,7 @@ public class DrawLineManager : MonoBehaviour {
 
 public SteamVR_TrackedObject trackedObj;
 
-private LineRenderer currLine;
+private GraphicsLineRenderer currLine;
 
 private int numClicks = 0;
 
@@ -17,17 +17,19 @@ void Update () {
 	SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
 	if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)){
 			GameObject go = new GameObject();
-			currLine = go.AddComponent<LineRenderer>();
-			currLine.material = new Material(Shader.Find("Particles/Additive"));
-			currLine.SetColors(c1, c2);
+			go.AddComponent<MeshFilter>();
+			go.AddComponent<MeshRenderer>();
 
-			currLine.SetWidth(.1f , .1f); // Adjust line width here
+			currLine = go.AddComponent<GraphicsLineRenderer> ();
+			//currLine.material = new Material(Shader.Find("Particles/Additive"));
+			//currLine.SetColors(c1, c2);
+
+			currLine.setWidth(.1f); // Adjust line width here
 
 			numClicks = 0;
 
 		} else if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
-			currLine.SetVertexCount(numClicks + 1);
-			currLine.SetPosition(numClicks, trackedObj.transform.position); //3d position of controller at any point in time
+			currLine.AddPoint(trackedObj.transform.position);
 			numClicks++;
 			}
 	}
