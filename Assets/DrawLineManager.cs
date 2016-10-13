@@ -3,15 +3,16 @@ using System.Collections;
 
 public class DrawLineManager : MonoBehaviour {
 
+public Material lMat;
+
 public SteamVR_TrackedObject trackedObj;
 
-private GraphicsLineRenderer currLine;
+private MeshLineRenderer currLine;
 
 private int numClicks = 0;
 
-//set line color at the start and at the end
-private Color c1 = Color.red;
-private Color c2 = Color.red;
+public int width; //Comment out this line and set width manually
+
 
 void Update () {
 	SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
@@ -19,18 +20,22 @@ void Update () {
 			GameObject go = new GameObject();
 			go.AddComponent<MeshFilter>();
 			go.AddComponent<MeshRenderer>();
+			currLine = go.AddComponent<MeshLineRenderer> ();
 
-			currLine = go.AddComponent<GraphicsLineRenderer> ();
-			//currLine.material = new Material(Shader.Find("Particles/Additive"));
-			//currLine.SetColors(c1, c2);
-
-			currLine.setWidth(.1f); // Adjust line width here
+			currLine.lmat = new Material(lMat);
+			currLine.setWidth(width); // Adjust line width here to 1f
 
 			numClicks = 0;
 
-		} else if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
+			} else if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
 			currLine.AddPoint(trackedObj.transform.position);
 			numClicks++;
+			} else if(device.GetTouchUp (SteamVR_Controller.ButtonMask.Trigger)) {
+			numClicks = 0;
+			currLine = null;
+			}
+			if (currLine != null){
+				currLine.lmat.color = ColorManager.Instance.GetCurrentColor();
 			}
 	}
 }

@@ -45,8 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ColorManager.cs" />
      <Compile Include="Assets\DrawLineManager.cs" />
-     <Compile Include="Assets\GraphicsLineRenderer.cs" />
+     <Compile Include="Assets\MeshLineRenderer.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -75,6 +76,12 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\ColorHuePicker.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\ColorIndicator.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\ColorSaturationBrightnessPicker.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\Draggable.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\ExampleColorReceiver.cs" />
+     <Compile Include="Assets\Simple Color Picker\Scripts\HSBColor.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -139,11 +146,15 @@
      <None Include="Assets\_ImmerseumSDK\license.txt" />
      <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
      <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
+     <None Include="Assets\Simple Color Picker\Shaders\ColorHue.shader" />
      <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
+     <None Include="Assets\Simple Color Picker\Shaders\ColorSaturationBrightness.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
      <None Include="Assets\SteamVR\readme.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
+     <None Include="Assets\Simple Color Picker\Shaders\SolidColor.shader" />
+     <None Include="Assets\Simple Color Picker\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

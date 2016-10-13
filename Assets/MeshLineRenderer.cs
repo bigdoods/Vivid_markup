@@ -1,16 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-/*
-class Point {
-	public Vector3 p;
-	public Point next;
-}
-*/
-
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
-public class GraphicsLineRenderer : MonoBehaviour {
+public class MeshLineRenderer : MonoBehaviour {
 
 	public Material lmat;
 
