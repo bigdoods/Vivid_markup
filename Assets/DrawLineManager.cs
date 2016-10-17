@@ -26,11 +26,9 @@ public class DrawLineManager : MonoBehaviour {
 			currLine.MyMat (LineColor) ;
 			currLine.setWidth (meshWidth);
 			currLine.tag = "MarkUp";
-			// currLine.GetComponent<Renderer>().material.color = Color.red;
 		} else if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) { 
 			currLine.AddPoint (TrackedObj.transform.position);
 			numClicks++;
-			//need to add markup tag to created objects
 		} else if (device.GetTouchUp (SteamVR_Controller.ButtonMask.Trigger)) { 
 			numClicks = 0;
 			currLine = null;

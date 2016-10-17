@@ -5,8 +5,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(MeshFilter))]
 
 public class MeshLineRenderer : MonoBehaviour {
-
-	//public Material MyMat;
+	
 	private Mesh ml;
 	private Vector3 s;
 	private float lineSize = .1f; 
@@ -14,13 +13,10 @@ public class MeshLineRenderer : MonoBehaviour {
 
 	void Start() {
 		ml = GetComponent<MeshFilter>().mesh;
-		//MyMat = GetComponent<MeshRenderer>().material.color;
-
-	}
+		}
 
 	public void MyMat(Color color){
 		GetComponent<Renderer>().materials[0].color = Color.red;
-		//MyMat.SetColor (color);
 	}
 
 	public void setWidth(float width) {
