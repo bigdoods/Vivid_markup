@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
+
 public class MeshLineRenderer : MonoBehaviour {
 
 	public Material lmat;
@@ -11,13 +12,13 @@ public class MeshLineRenderer : MonoBehaviour {
 
 	private Vector3 s;
 
-	private float lineSize = .1f;
+	private float lineSize = .1f; 
 
 	private bool firstQuad = true;
 
 	void Start() {
 		ml = GetComponent<MeshFilter>().mesh;
-		GetComponent<MeshRenderer>().material = lmat;
+		lmat = GetComponent<MeshRenderer>().material;
 	}
 
 	public void setWidth(float width) {

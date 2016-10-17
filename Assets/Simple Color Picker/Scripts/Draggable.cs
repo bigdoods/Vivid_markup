@@ -4,7 +4,6 @@ public class Draggable : MonoBehaviour
 {
 
 	public SteamVR_TrackedObject trackedObj;
-
 	public bool fixX;
 	public bool fixY;
 	public Transform thumb;
