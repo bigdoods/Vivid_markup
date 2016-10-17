@@ -3,9 +3,11 @@ using System.Collections;
 
 public class DrawLineManager : MonoBehaviour {
 
-	public Material lMat;
+	private Color LineColor;
 
 	public SteamVR_TrackedObject TrackedObj; 
+
+	public float meshWidth = .2f;
 
 	private MeshLineRenderer currLine;
 
@@ -21,9 +23,10 @@ public class DrawLineManager : MonoBehaviour {
 			go.AddComponent<MeshRenderer> ();
 			go.AddComponent<MeshCollider> ();
 			currLine = go.AddComponent<MeshLineRenderer> ();
-			currLine.lmat = new Material (lMat);
-			currLine.setWidth (.1f);
+			currLine.MyMat (LineColor) ;
+			currLine.setWidth (meshWidth);
 			currLine.tag = "MarkUp";
+			// currLine.GetComponent<Renderer>().material.color = Color.red;
 		} else if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) { 
 			currLine.AddPoint (TrackedObj.transform.position);
 			numClicks++;
@@ -35,8 +38,6 @@ public class DrawLineManager : MonoBehaviour {
 			meshes = GameObject.FindWithTag ("MarkUp");
 			Destroy (meshes);
 		}
-			if (currLine != null){ 
-				currLine.lmat.color = ColorManager.Instance.GetCurrentColor();
-			}
+		}
 		}
 }

@@ -6,19 +6,21 @@ using System.Collections.Generic;
 
 public class MeshLineRenderer : MonoBehaviour {
 
-	public Material lmat;
-
+	//public Material MyMat;
 	private Mesh ml;
-
 	private Vector3 s;
-
 	private float lineSize = .1f; 
-
 	private bool firstQuad = true;
 
 	void Start() {
 		ml = GetComponent<MeshFilter>().mesh;
-		lmat = GetComponent<MeshRenderer>().material;
+		//MyMat = GetComponent<MeshRenderer>().material.color;
+
+	}
+
+	public void MyMat(Color color){
+		GetComponent<Renderer>().materials[0].color = Color.red;
+		//MyMat.SetColor (color);
 	}
 
 	public void setWidth(float width) {
