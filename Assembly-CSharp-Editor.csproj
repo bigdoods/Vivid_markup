@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A3BFEC92-23C7-E4ED-F0F7-BE0902A609DF}</ProjectGuid>
+    <ProjectGuid>{5A0769DA-25DA-A68D-BA58-6ED404CB536B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -53,27 +53,32 @@
      <Compile Include="Assets\SteamVR\Editor\SteamVR_Settings.cs" />
      <Compile Include="Assets\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
      <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
-     <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
+     <Compile Include="Assets\VRTK-master\Assets\VRTK\Editor\VRTK_AdaptiveQualityEditor.cs" />
+     <Compile Include="Assets\VRTK-master\Assets\VRTK\Editor\VRTK_EditorUtilities.cs" />
+     <Compile Include="Assets\VRTK-master\Assets\VRTK\Editor\VRTK_InteractableObjectEditor.cs" />
+     <Compile Include="Assets\VRTK-master\Assets\VRTK\Scripts\Controls\2D\RadialMenu\Editor\RadialMenuInspector.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\ControllerManagerEditor.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\HMDSimulatorEditor.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\InputActionManagerEditor.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\InputManagerSetup.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\MovementManagerEditor.cs" />
      <Compile Include="Assets\_ImmerseumSDK\Editor\PlayAreaManagerEditor.cs" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Version.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
      <None Include="Assets\_ImmerseumSDK\license.txt" />
      <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Scripts\Shaders\UIOverlay.shader" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Scripts\Shaders\VRTK_OutlineBasic.shader" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Scripts\Shaders\AdaptiveQualityDebugVisualization.shader" />
      <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
-     <None Include="Assets\Simple Color Picker\Shaders\ColorHue.shader" />
      <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
-     <None Include="Assets\Simple Color Picker\Shaders\ColorSaturationBrightness.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Scripts\Shaders\TransparentFresnelBehind.shader" />
      <None Include="Assets\SteamVR\readme.txt" />
+     <None Include="Assets\VRTK-master\Assets\VRTK\Scripts\Shaders\Unlit_TransparentColor.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
-     <None Include="Assets\Simple Color Picker\Shaders\SolidColor.shader" />
-     <None Include="Assets\Simple Color Picker\readme.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -113,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{532C0090-058B-B9DF-B474-8D6D78558300}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
